@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <p>{$r}</p>
+        {if $r==1}
+        <p>一等奖</p>
+        {elseif $r ==2 || $r==3}
+        <p>二等奖</p>
+        {elseif $r >= 4 && $r <= 6 }
+        <p>三等奖</p>
+        {else}
+        <p>未中奖</p>
+        {/if}
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style type="text/css">
+            .box::after {
+                content: '';
+                height: 0;
+                display: block;
+                visibility: hidden;
+                clear: both;
+            }
+            .undef {
+                width: 100px;
+                height: 100px;
+                background: green;
+                margin: 10px 20px ;
+                float: left;
+                }
+            .exist {
+                width: 100px;
+                height: 100px;
+                background: red;
+                margin: 10px 20px ;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="width: 700px" class="box">
+                {foreach $r as $k => $v}
+                    {if ($v['whether'] == 1) }
+            <div class="exist {$k}">{$v['id']} 已预定</div>
+                    {else /}
+            <div class="undef {$k}">{$v['id']}</div>
+                    {/if}
+                {/foreach}
+        </div><br>
+        <form action="/reserve/res" method="post">
+            <input type="text" placeholder="座位号" name="id">
+            <input type="submit" value="预定">
+        </form>
+    </body>
+</html>

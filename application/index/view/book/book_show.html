@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>book_show</title>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td>图书id</td>
+                <td>名称</td>
+                <td>价格</td>
+                <td>数量</td>
+                <td>是否上架</td>
+                <td>操作</td>
+            </tr>
+            {foreach $book as $k => $v}
+                <tr>
+                    <td>{$v.book_id}</td>
+                    <td>{$v.book_name}</td>
+                    <td>{$v.book_price}</td>
+                    <td>{$v.book_num}</td>
+                    <td>{$v.is_sale}</td>
+                    <td>
+                        <a href="/bookdel/{$v.book_id}">删除</a>
+                        <a href="/bookup/{$v.book_id}">修改</a>
+                    </td>
+                </tr>
+            {/foreach}
+        </table>
+        <a href="/bookadd">添加</a>
+    </body>
+</html>

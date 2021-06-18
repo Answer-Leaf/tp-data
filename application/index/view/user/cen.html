@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>欢迎回来！</h1>
+    <p>你好，{$username}</p>
+    <p>现在是{$now}</p>
+    <p>您上次登录时间是{$last_time}</p>
+    <a href="/out">退出登录</a>
+    <a href="/movie/score/{$id}">电影评分</a>
+    <a href="/draw/luck/{$id}">用户抽奖</a>
+    <a href="reserve/res">观影订座</a>
+    <a href="reserve/movie">我的预订</a>
+    <table border="1">
+        <tr>
+            <td>用户uid：</td>
+            <td>过去的登录时间</td>
+            <td>过去的登录ip</td>
+            <td>浏览器信息</td>
+        </tr>
+        {foreach $login as $k => $v}
+        <tr>
+            <td>{$v.uid}</td>
+            <td>{$v.login_time}</td>
+            <td>{$v.login_ip}</td>
+            <td>{$v.ua}</td>
+        </tr>
+        {/foreach}
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>我的预定</title>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <th>座位号</th>
+                <th>预定时间</th>
+            </tr>
+            {foreach $user as $k =>$v}
+            <tr>
+                <td>{$v['res_id']}</td>
+                <td>{$v['add_time']}</td>
+            </tr>
+            {/foreach}
+        </table>
+    </body>
+</html>

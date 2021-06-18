@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <h1>注册</h1>
+    <form action="/reg_p" method="post"><br>
+        用户名：<input type="text" name="user" ><br>
+        邮箱：<input type="text" name="email"><br>
+        手机号：<input type="text" name="mobile"><br>
+        密码：<input type="password" name="pass"><br>
+        确认密码：<input type="password" name="passT"><br>
+        <input type="submit"  value="提交">
+    </form>
+    <a href="/login">已有账号，点此登录</a>
+    </body>
+</html>
+    <script>
+        let pass=document.getElementsByName('pass')[0];
+        let passT=document.getElementsByName('passT')[0];
+        let form=document.getElementsByTagName('form')[0];
+        if (pass!=passT){
+            form.submit=function () {
+                return false
+            }
+        }
+    </script>
